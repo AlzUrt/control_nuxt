@@ -1,23 +1,21 @@
 <template>
+  <div>
 
-    <div>
-  
-      <h1>Invotory</h1>
-  
-    </div>
-  
-  </template>
-  
-  
-  
-  
-  <script setup>
-  
+    <h1>inventory</h1>
 
+  </div>
+</template>
   
-  definePageMeta({
-    middleware: 'protector'
-  })
   
-  </script>
+  
+  
+<script setup>
+
+
+
+definePageMeta({
+  middleware: 'protector'
+})
+
+</script>
   

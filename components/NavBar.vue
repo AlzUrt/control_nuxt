@@ -9,6 +9,7 @@
       <p>{{ produit }}</p>
     </div>
     
+    <div>prix : {{ prixTotal }}</div>
     
   </div>
 </template>
@@ -24,7 +25,12 @@ const props = defineProps({
   {
     type: Array,
     required: true
-  } 
+  },
+  prixTotal:
+  {
+    type: Number,
+    required: true
+  }
 })
 
 
@@ -48,7 +54,7 @@ function togglePanier() {
 .absolute {
   background-color: green;
   width: 20%;
-  height: 50%;
+
   position: fixed;
   justify-content: space-between;
   top: 80px;

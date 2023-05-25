@@ -1,5 +1,5 @@
 <template>
-  <div @click="AddToShop(produit.title)" class="card">
+  <div @click="AddToShop(produit.title, produit.price)" class="card">
     <h2 class="title">{{ produit.title }}</h2>
     <p>{{ produit.price }}</p>
   </div>
@@ -15,9 +15,10 @@ const props = defineProps({
 })
 
 const emit = defineEmits(['add-to-shop'])
-function AddToShop(productTitle){
+function AddToShop(productTitle , productPrice){
+
   // renvoyé l'élément cliqué à la page parent
-  emit('add-to-shop', productTitle)
+  emit('add-to-shop', productTitle, productPrice)
 }
   </script>
   
