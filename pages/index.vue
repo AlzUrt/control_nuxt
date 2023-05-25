@@ -1,4 +1,5 @@
 <template>
+   <p>utilsier un email valide</p>
     <div class="bg-green-200 grid min-h-screen place-content-center">
       <div class="text-center text-gray-400">
       <Icon name="material-symbols:lock" size="60"/>
