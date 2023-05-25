@@ -5,20 +5,20 @@
       <input  placeholder="Email" type="email" @keyup.enter="setCookie(emailInput)" v-model="emailInput" name="email" />
 
     </div>
-  
+
     </div>
-  
+
   </template>
   
   <script setup>
+  // on met en place un cookie pour le mail
   const emailInput = ref('') 
-  
-  // https://nuxt.com/docs/api/composables/use-cookie#usecookie
+
   const emailCookie = useCookie('email')
   
   function setCookie(cookie) {
     emailCookie.value = cookie
-    navigateTo('/products')
+    navigateTo('/products?email='+cookie+'')
   }
 
   </script>

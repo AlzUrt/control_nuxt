@@ -2,7 +2,7 @@
 
     <div>
   
-      <h1>PRIVATE</h1>
+      <h1>Invotory</h1>
   
     </div>
   
