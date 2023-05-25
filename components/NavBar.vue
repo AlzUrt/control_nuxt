@@ -1,12 +1,12 @@
 <template>
   <div class="navbar-container">
     <h1 class="logo">{{ email }}</h1>
-    <button class="panier-button" @click="togglePanier">panier</button>
+    <button class="panier-button" @click="togglePanier">panier <Icon name="map:grocery-or-supermarket" size="20" /></button>
   </div>
   <div class="panier-container" v-show="showPanier">
-    <p class="panier-title">panier</p>
-    <div class="panier-item" v-for="produit in listProduit">
-      <p>{{ produit }}</p>
+    <div class="panier-item" v-for="produit in listProduit" :class="{ 'panier-item-dark': index % 2 !== 0 }">
+      <p class="produit-nom"> {{ produit[0] }}</p>
+      <p class="prix">{{ produit[1] }}€</p>
     </div>
     
     <div class="prix-container">
@@ -24,6 +24,9 @@
   align-items: center;
   background-color: #f2f2f2;
   padding: 10px;
+}
+.produit-nom {
+  margin-right: 10px;
 }
 
 .logo {
@@ -58,9 +61,19 @@
   font-weight: bold;
   margin-bottom: 10px;
 }
+.panier-item-dark {
+  background-color: #eaeaea;
+}
 
 .panier-item {
-  margin-bottom: 5px;
+  display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 10px;
+}
+.prix {
+  font-weight: bold;
 }
 
 .prix-container {

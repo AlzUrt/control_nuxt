@@ -1,6 +1,6 @@
 <template>
   <div class="load">
-    <h1>chargement</h1>
+    <Icon size="60" name="svg-spinners:tadpole"/>
   </div>
 
   </template>
@@ -18,10 +18,11 @@ const isLoading = ref(true)
     background-color: #F3F4F6;
   }
 
-  h1 {
-    font-size: 2rem;
+
+  .icone{
+    width: 100px;
+    height: 100px;
     color: #4B5563;
-    text-align: center;
   }
 </style>
 

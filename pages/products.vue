@@ -18,6 +18,45 @@
   </div>
 </template>
 
+<style>
+body{
+  margin: 0;
+}
+.page-container {
+  background-color: #f2f2f2;
+  padding: 10px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.searchBar {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.searchBar p {
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.searchBar input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 20px;
+}
+</style>
+
 <script setup>
 definePageMeta({
   middleware: 'protector'
@@ -48,8 +87,7 @@ const listProduit = ref([]);
 const prixTotal = ref(0);
 
 const addToShopHandler = (productTitle, productPrice) => {
-  listProduit.value.push(productTitle);
-  console.log(listProduit.value);
+  listProduit.value.push([productTitle, productPrice]);
   prixTotal.value += productPrice;
 };
 
@@ -72,25 +110,4 @@ const filteredProduits = computed(() => {
 });
 </script>
 
-<style>
-body {
-  margin: 0;
-}
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 1rem;
-}
-
-.container {
-  padding-top: 100px;
-  width: 100%;
-}
-
-.searchBar {
-  width: 100%;
-  height: 100px;
-  background-color: white;
-}
-</style>
