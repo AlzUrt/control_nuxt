@@ -11,6 +11,9 @@
 </template>
 
 <style>
+body{
+  margin: 0;
+}
 .page-container {
   display: flex;
   justify-content: center;

@@ -1,12 +1,80 @@
 <template>
-  <div v-show="showItem" class="item">
-    <p>{{ produit.id }} - {{ produit.title }} - {{ nombre }}</p>
+  <div v-show="showItem" class="item-container">
+    <div class="inventory-list">
+      <div class="nom">
+        <p>id: {{ produit.id }} </p> 
+        <p>nom : {{ produit.title }} </p>
+        <p class="nombre">nombre : {{ nombre }}</p>
+      </div>
+      <div class="bouton-container">
         <button @click="plussOne">+</button>
-        <button @click="lessOne">-</button>
+          <button @click="lessOne">-</button>
+      </div>
+    </div>
+
   </div>
 
 </template>
   
+<style>/* Stylisation générale */
+.inventory-list{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f2f2f2;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: #f2f2f2;
+}
+
+.nombre{
+  font-size: x-large;
+  font-weight: bold;
+}
+.item-container {
+  margin: 10px;
+}
+
+/* Stylisation des éléments dans la div nom */
+.nom {
+  margin-bottom: 10px;
+}
+
+.nom p {
+  margin: 5px 0;
+}
+
+/* Stylisation des boutons */
+.bouton-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bouton-container button {
+  margin: 0 5px;
+  padding: 5px 10px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.bouton-container button:hover {
+  background-color: #2980b9;
+}
+
+.bouton-container button:active {
+  background-color: #1f618d;
+}
+
+</style>
+
+
   <script setup>
 const props = defineProps({
   produit:
@@ -54,10 +122,3 @@ onMounted(async () => {
   </script>
 
 
-<style>
-.item{
-  display: flex;
-  margin-bottom: 10px;
-}
-
-</style>
