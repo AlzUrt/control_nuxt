@@ -1,15 +1,49 @@
 <template>
-   <p>utilsier un email valide</p>
-    <div class="bg-green-200 grid min-h-screen place-content-center">
-      <div class="text-center text-gray-400">
-      <Icon name="material-symbols:lock" size="60"/>
-      <input  placeholder="Email" type="email" @keyup.enter="setCookie(emailInput)" v-model="emailInput" name="email" />
-
+  <div class="page-container">
+    <div class="email-container">
+      <p class="error-message">Veuillez utiliser une adresse e-mail valide</p>
+      <div class="input-email">
+        <Icon name="material-symbols:lock" size="60"/>
+        <input class="email-input" placeholder="Email" type="email" @keyup.enter="setCookie(emailInput)" v-model="emailInput" name="email" />
+      </div>
     </div>
+  </div>
+</template>
 
-    </div>
+<style>
+.page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: lightblue;
+}
 
-  </template>
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.email-container {
+  text-align: center;
+}
+
+.input-email {
+  display: flex;
+  align-items: center;
+}
+
+.email-input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-left: 10px;
+  width: 200px;
+}
+</style>
+
+
   
   <script setup>
   // on met en place un cookie pour le mail

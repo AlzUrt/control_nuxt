@@ -9,14 +9,20 @@
 const isLoading = ref(true)
 </script>
 
-<style>
-.load{
-  background-color: red;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 50px;
-}
+<style scoped>
+  .load {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #F3F4F6;
+  }
+
+  h1 {
+    font-size: 2rem;
+    color: #4B5563;
+    text-align: center;
+  }
 </style>
+
   
